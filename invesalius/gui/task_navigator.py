@@ -31,6 +31,7 @@ import data.corregistration as dcr
 import data.trackers as dtrk
 import data.coordinates as dco
 import gui.dialogs as dlg
+import gui.dialog_registration as dlgreg
 import gui.widgets.foldpanelbar as fpb
 import gui.widgets.colourselect as csel
 import gui.widgets.platebtn as pbtn
@@ -424,7 +425,7 @@ class NeuronavigationTools(wx.Panel):
 #===============================================================================     
         elif id == FineCorregistration:
             self.Corregistration()
-            dialog = RegistrationDialog(None, 'InVesalius 3 - Calibration' )
+            dialog = dlgreg.RegistrationDialog(None, 'InVesalius 3 - Calibration' )
 #===============================================================================                          
         if self.aux_trck_ref1 == 0 or self.aux_trck_ref2 == 0 or self.aux_trck_ref3 == 0:
             Publisher.sendMessage('Update tracker position', coord)         
