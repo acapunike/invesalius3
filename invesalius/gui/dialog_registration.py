@@ -24,7 +24,7 @@ import wx.lib.agw.floatspin as FS
 
 class RegistrationDialog(wx.Dialog):
     def __init__(self, parent, title):
-        wx.Dialog.__init__(self, parent, title='Corregistration Refinement')
+        wx.Dialog.__init__(self, parent)
         self.build_gui()
         self.build_source()
         
@@ -401,6 +401,6 @@ def transform_protocol(self):
         self.irenwin.Refresh()
     
 app = wx.App(False)
-reg_dialog = RegistrationDialog(None, -1)
+reg_dialog = RegistrationDialog(None, 'InVesalius 3 - Calibration' )
 reg_dialog.ShowModal()
 app.MainLoop()          
