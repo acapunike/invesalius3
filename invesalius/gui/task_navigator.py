@@ -412,11 +412,20 @@ class NeuronavigationTools(wx.Panel):
         elif id == TR3:
             self.aux_trck_ref3 = 0
             self.coord3b = dco.Coordinates(self.trk_init, self.tracker_id, self.ref_mode_id).Returns()
-            coord = self.coord3b[0:3]            
+            coord = self.coord3b[0:3]      
+#=======aji========================================================================
+#===============================================================================     
+#         elif id == FineCorregistration:
+#             self.Corregistration()
+#             dialog = dlg.FineCalibration(self, -1, _('InVesalius 3 - Calibration'))
+#===============================================================================  
+
+#=======acapunike========================================================================
+#===============================================================================     
         elif id == FineCorregistration:
             self.Corregistration()
-            dialog = dlg.FineCalibration(self, -1, _('InVesalius 3 - Calibration'))
-                        
+            dialog = RegistrationDialog(None, 'InVesalius 3 - Calibration' )
+#===============================================================================                          
         if self.aux_trck_ref1 == 0 or self.aux_trck_ref2 == 0 or self.aux_trck_ref3 == 0:
             Publisher.sendMessage('Update tracker position', coord)         
     
